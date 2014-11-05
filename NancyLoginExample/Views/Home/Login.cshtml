@@ -1,0 +1,67 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@{ this.Layout = "_Layout.cshtml"; }
+
+<h4 id="messageHeader" style="color:red;margin-left:15px;padding-top:10px;">Invalid user name or password!</h4>
+
+<form method="post" action="/trylogin" style="margin-left:15px;">
+    <h2 style="padding-top:10px;">Login</h2>
+
+    <fieldset>
+        <div class="modelFieldContainer">
+
+            <div class="editor-label">
+                <label for="UserName">User Name:</label>
+            </div>
+            <div class="editor-field">
+                <input id="UserName" class="text-box" type="text" name="UserName" />
+            </div>
+
+            <div class="editor-label">
+                <label for="Password">Password</label>
+            </div>
+            <div class="editor-field">
+                <input id="Password" class="text-box" type="password" name="Password" />
+            </div>
+
+            <input type="hidden" id="RedirectUrlField" name="RedirectUrlField" />
+
+            <p style="padding-top:25px;">
+                <input id="submitButton" type="submit" value="Login" />
+            </p>
+        </div>
+    </fieldset>
+</form>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var redirectUrl = '@this.ViewBag.RedirectUrlFromLogin';
+            if (redirectUrl !== '')
+            {
+                $('#RedirectUrlField').val(redirectUrl)
+            }
+
+            var isInitialLogin = '@this.ViewBag.IsInitialLogin';
+            if (isInitialLogin === 'true')
+            {
+                $('#messageHeader').hide();
+            }
+
+            $("#submitButton").click(function (event) {
+                var userName = $('#UserName').val();
+                var password = $('#Password').val();
+
+                if (userName === '') {
+                    alert('You must enter a user name!');
+                    event.preventDefault();
+                    return;
+                }
+                else if (password === '') {
+                    alert('You must enter a password!');
+                    event.preventDefault();
+                    return;
+                }
+            });
+        });
+    </script>
+}
