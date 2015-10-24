@@ -20,7 +20,7 @@ This is a work in progress - one thing it does NOT do that it really should, is 
 
 I've written a post on my blog that walks through some of the details on how to use this, but overall the solution is under 800 lines of code and it should be pretty easy to read through and figure out what's going on.
 
-Check out [the blog post](http://www.carlsoncoder.com/blog/csharp/2014/11/06/Custom-login-authentication-with-Nancy-and-csharp "Carlson Coder Blog") here.
+Check out [the blog post](http://www.carlsoncoder.com/#/blog/2014_11_06_Custom-login-authentication-with-Nancy-and-csharp "Carlson Coder Blog") here.
 
 Feel free to reach out to me at Twitter via [@carlsoncoder](https://twitter.com/carlsoncoder "@carlsoncoder") with any questions!
 
@@ -30,4 +30,4 @@ Justin
 License
 ----
 
-This code sample is considered [Beerware](http://en.wikipedia.org/wiki/Beerware "Beerware") and licensed under the [IDGAF](http://dev.bukkit.org/licenses/2977-idgaf-v1-0-license/ "IDGAF") license.
+This code sample is considered [Beerware](http://en.wikipedia.org/wiki/Beerware "Beerware")
